@@ -1,0 +1,12 @@
+package: github.com/mgutz/sshtunnel
+import:
+- package: github.com/mgutz/dat
+  version: next
+  subpackages:
+  - dat
+  - sqlx-runner
+- package: golang.org/x/crypto
+  subpackages:
+  - ssh
+  - ssh/agent
+- package: github.com/mgutz/configpipe

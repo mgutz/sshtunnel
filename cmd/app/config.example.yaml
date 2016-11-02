@@ -1,0 +1,9 @@
+# rename this to config.yaml
+
+pg:
+  user: postgres
+  password: SECRET
+
+ssh:
+  user: sshuser
+  address: "192.168.16.1:22"

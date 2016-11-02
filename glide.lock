@@ -1,0 +1,68 @@
+hash: a1318584e118141a760a2b9fc61b8105a14492cf91b4ae1b1608cef2486ae827
+updated: 2016-11-02T10:05:51.564506583-07:00
+imports:
+- name: github.com/cenkalti/backoff
+  version: 32cd0c5b3aef12c76ed64aaf678f6c79736be7dc
+- name: github.com/garyburd/redigo
+  version: 8873b2f1995f59d4bcdd2b0dc9858e2cb9bf0c13
+  subpackages:
+  - internal
+  - redis
+- name: github.com/go-yaml/yaml
+  version: a5b47d31c556af34a302ce5d659e6fea44d90de0
+- name: github.com/imdario/mergo
+  version: 3e95a51e0639b4cf372f2ccf74c86749d747fbdc
+- name: github.com/jmoiron/sqlx
+  version: 5f97679e23f75f42b265fec8d3bdb1c8de90b79d
+  subpackages:
+  - reflectx
+- name: github.com/lib/pq
+  version: a37edb86214894fa6c6c3401a4c4976b02176dd3
+  subpackages:
+  - oid
+- name: github.com/mattn/go-colorable
+  version: 6e26b354bd2b0fc420cb632b0d878abccdc6544c
+- name: github.com/mattn/go-isatty
+  version: 66b8e73f3f5cda9f96b69efd03dd3d7fc4a5cdb8
+- name: github.com/mgutz/ansi
+  version: c286dcecd19ff979eeb73ea444e479b903f2cfcb
+- name: github.com/mgutz/configpipe
+  version: e43e81faa903e90ae1cdd710222622c1b15ea31f
+- name: github.com/mgutz/dat
+  version: 5b401b2f6c3c4874571c65f2fcd1e7d2c2468f3c
+  subpackages:
+  - common
+  - dat
+  - kvs
+  - postgres
+  - reflectx
+  - sqlx-runner
+- name: github.com/mgutz/jo
+  version: 7609815e16fdb9239a0e1e353e27c78823ce2beb
+- name: github.com/mgutz/logxi
+  version: aebf8a7d67ab4625e0fd4a665766fef9a709161b
+  subpackages:
+  - v1
+- name: github.com/mgutz/str
+  version: 968bf66e3da857419e4f6e71b2d5c9ae95682dc4
+- name: github.com/mgutz/to
+  version: 00c06406c2dd2e011f153a6502a21473676db33f
+- name: github.com/pkg/errors
+  version: 645ef00459ed84a119197bfb8d8205042c6df63d
+- name: github.com/pmylund/go-cache
+  version: 1881a9bccb818787f68c52bfba648c6cf34c34fa
+- name: github.com/satori/go.uuid
+  version: 879c5887cd475cd7864858769793b2ceb0d44feb
+- name: golang.org/x/crypto
+  version: 9477e0b78b9ac3d0b03822fd95422e2fe07627cd
+  subpackages:
+  - curve25519
+  - ed25519
+  - ed25519/internal/edwards25519
+  - ssh
+  - ssh/agent
+- name: golang.org/x/sys
+  version: c200b10b5d5e122be351b67af224adc6128af5bf
+  subpackages:
+  - unix
+testImports: []
