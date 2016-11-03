@@ -65,7 +65,7 @@ func query(conn runner.Connection) error {
 	return nil
 }
 
-func main() {
+func openTunnel() (*sshtunnel.SSHTunnel, error) {
 	sshConfig := &ssh.ClientConfig{
 		User: config.MustString("ssh.user"),
 		Auth: []ssh.AuthMethod{
@@ -84,27 +84,42 @@ func main() {
 
 	if err := <-tunnel.Open(); err != nil {
 		tunnel.Close()
+		return nil, err
+	}
+
+	return tunnel, nil
+}
+
+func main() {
+	tunnel, err := openTunnel()
+	if err != nil {
 		panic(err)
 	}
-
-	// TODO is there a more elegant way to do clean up in tunnel itself if the program
-	// is terminated, need to close database connections as well
-	cleanup := func() {
-		c := make(chan os.Signal, 2)
-		signal.Notify(c, os.Interrupt, syscall.SIGTERM)
-		go func() {
-			<-c
-			tunnel.Close()
-			os.Exit(1)
-		}()
-	}
-
-	go cleanup()
 
 	db, err := openDatabase(config.MustString("pg.user"), config.MustString("pg.password"))
 	if err != nil {
 		panic(err)
 	}
+
+	cleanup := func() {
+		if db != nil {
+			db.Close()
+		}
+		if tunnel != nil {
+			tunnel.Close()
+		}
+	}
+	defer cleanup()
+
+	// TODO is there a more elegant way to autoclose in tunnel itself if the program
+	// is terminated
+	c := make(chan os.Signal, 2)
+	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
+	go func() {
+		<-c
+		cleanup()
+		os.Exit(1)
+	}()
 
 	err = query(db)
 	if err != nil {

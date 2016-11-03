@@ -1,5 +1,5 @@
 hash: a1318584e118141a760a2b9fc61b8105a14492cf91b4ae1b1608cef2486ae827
-updated: 2016-11-02T10:05:51.564506583-07:00
+updated: 2016-11-03T07:49:30.121519148-07:00
 imports:
 - name: github.com/cenkalti/backoff
   version: 32cd0c5b3aef12c76ed64aaf678f6c79736be7dc
@@ -8,8 +8,6 @@ imports:
   subpackages:
   - internal
   - redis
-- name: github.com/go-yaml/yaml
-  version: a5b47d31c556af34a302ce5d659e6fea44d90de0
 - name: github.com/imdario/mergo
   version: 3e95a51e0639b4cf372f2ccf74c86749d747fbdc
 - name: github.com/jmoiron/sqlx
@@ -17,7 +15,7 @@ imports:
   subpackages:
   - reflectx
 - name: github.com/lib/pq
-  version: a37edb86214894fa6c6c3401a4c4976b02176dd3
+  version: d8eeeb8bae8896dd8e1b7e514ab0d396c4f12a1b
   subpackages:
   - oid
 - name: github.com/mattn/go-colorable
@@ -27,9 +25,9 @@ imports:
 - name: github.com/mgutz/ansi
   version: c286dcecd19ff979eeb73ea444e479b903f2cfcb
 - name: github.com/mgutz/configpipe
-  version: e43e81faa903e90ae1cdd710222622c1b15ea31f
+  version: 8d7c8747a17c00e21877036ff4dd980aa289becb
 - name: github.com/mgutz/dat
-  version: 5b401b2f6c3c4874571c65f2fcd1e7d2c2468f3c
+  version: 23cf59ea969e2bc0df03d31775f623cf0424e2b1
   subpackages:
   - common
   - dat
@@ -47,6 +45,8 @@ imports:
   version: 968bf66e3da857419e4f6e71b2d5c9ae95682dc4
 - name: github.com/mgutz/to
   version: 00c06406c2dd2e011f153a6502a21473676db33f
+- name: github.com/mgutz/yaml
+  version: fa84835a587118b5ebe80c9b66ecd5a4d96e93ea
 - name: github.com/pkg/errors
   version: 645ef00459ed84a119197bfb8d8205042c6df63d
 - name: github.com/pmylund/go-cache
